@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Aguko Osman &amp; Co. Advocates</title>
+  <meta name="description" content="Write to Aguko Osman & Co. Advocates in Nairobi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="contact">
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main" class="page">
+    <div class="wrap">
+      <p class="page-kicker" data-i18n="contact.kicker"></p>
+      <h1 class="lede" style="max-width:16ch;" data-i18n="contact.lede"></h1>
+      <p class="intro" data-i18n="contact.intro"></p>
+      <div class="contact-grid">
+        <form id="inquiry" action="https://formsubmit.co/info@agukoosman.com" method="POST">
+          <p id="form-status" class="form-status"></p>
+          <input type="hidden" name="_next" value="">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="honey" aria-hidden="true">
+            <label>Website<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <div class="field">
+            <label for="name" data-i18n="contact.name"></label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email" data-i18n="contact.email"></label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="phone" data-i18n="contact.phone"></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="matter" data-i18n="contact.matter"></label>
+            <select id="matter" name="matter">
+              <option value="" data-i18n="contact.select"></option>
+              <option value="Dispute / litigation" data-i18n="contact.optDispute"></option>
+              <option value="Corporate / commercial" data-i18n="contact.optCorporate"></option>
+              <option value="Conveyancing / land" data-i18n="contact.optLand"></option>
+              <option value="Employment" data-i18n="contact.optEmployment"></option>
+              <option value="Other" data-i18n="contact.optOther"></option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message" data-i18n="contact.outline"></label>
+            <textarea id="message" name="message" rows="6" required data-i18n-placeholder="contact.placeholder"></textarea>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="privacy" required>
+            <span data-i18n="contact.consent"></span>
+          </label>
+          <button class="btn btn-solid" type="submit" data-i18n="contact.send"></button>
+        </form>
+        <aside>
+          <dl class="details">
+            <dt data-i18n="contact.email"></dt>
+            <dd><a href="mailto:info@agukoosman.com">info@agukoosman.com</a></dd>
+            <dt>WhatsApp</dt>
+            <dd><a href="tel:+254743923365">+254 743 923 365</a><br><a href="https://wa.me/254743923365">WhatsApp</a></dd>
+            <dt data-i18n="contact.hours"></dt>
+            <dd data-i18n="contact.hoursVal"></dd>
+            <dt data-i18n="contact.chambers"></dt>
+            <dd data-i18n="contact.chambersVal"></dd>
+          </dl>
+        </aside>
+      </div>
+      <h2 class="page-kicker" style="margin-top:56px;" data-i18n="contact.mapsTitle"></h2>
+      <div class="maps">
+        <div class="map-card">
+          <h2 data-i18n="contact.pioneerTitle"></h2>
+          <p data-i18n="contact.pioneerBody"></p>
+          <iframe title="Pioneer House, Moi Avenue, Nairobi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Pioneer%20House%20Moi%20Avenue%20Nairobi&output=embed"></iframe>
+        </div>
+        <div class="map-card">
+          <h2 data-i18n="contact.akaiTitle"></h2>
+          <p data-i18n="contact.akaiBody"></p>
+          <iframe title="Akai Plaza, Thika Road, Nairobi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Akai%20Plaza%20Thika%20Road%20Nairobi&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/i18n.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

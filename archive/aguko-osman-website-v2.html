@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aguko Osman & Co. Advocates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============================================
+     PALETTE — flat colours only, no gradients anywhere
+     Paper       #F1ECDF
+     Ink         #22231E
+     Chambers Green (primary) #223B2E
+     Ledger Green (deep, for bands) #16261D
+     Brass (single accent)     #A9762E
+     Stone (muted text/lines)  #6E6A5C
+     Hairline                 rgba(34,35,30,0.15)
+     ============================================ */
+  :root{
+    --paper:#F1ECDF;
+    --ink:#22231E;
+    --green:#223B2E;
+    --green-deep:#16261D;
+    --brass:#A9762E;
+    --stone:#6E6A5C;
+    --hairline: rgba(34,35,30,0.15);
+    --hairline-on-dark: rgba(241,236,223,0.18);
+    --maxw: 1100px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Source Serif 4',serif;font-weight:600;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 30px;}
+  .hairline{border-top:1px solid var(--hairline);}
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--paper);
+    border-bottom:1px solid var(--hairline);
+    position:sticky;top:0;z-index:30;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;}
+  .brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--ink);}
+  .seal{
+    width:40px;height:40px;border:1.5px solid var(--green);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Source Serif 4',serif;font-size:14px;font-weight:600;color:var(--green);
+  }
+  .brand-text{line-height:1.25;}
+  .brand-text .name{font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;}
+  .brand-text .sub{font-size:11px;color:var(--stone);}
+  .navlinks{display:flex;gap:34px;font-size:14.5px;}
+  .navlinks a{text-decoration:none;position:relative;padding-bottom:4px;}
+  .navlinks a::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+    background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .2s ease;
+  }
+  .navlinks a:hover::after{transform:scaleX(1);}
+  .menu-btn{display:none;background:var(--paper);border:1px solid var(--ink);padding:9px 14px;font-size:13.5px;font-family:'Inter',sans-serif;cursor:pointer;}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:100px 0 0;}
+  .hero-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:end;padding-bottom:64px;}
+  .kicker{font-size:14px;color:var(--brass);margin-bottom:20px;}
+  .hero h1{font-size:clamp(32px,4.4vw,50px);line-height:1.14;margin:0 0 24px;max-width:640px;}
+  .hero .lede{font-size:17px;color:#41412F;max-width:480px;margin-bottom:0;}
+  .hero-side{border-left:1px solid var(--hairline);padding-left:32px;}
+  .hero-side p{font-size:14.5px;color:var(--stone);margin:0 0 20px;}
+  .btn{display:inline-block;padding:13px 24px;font-size:14.5px;text-decoration:none;font-weight:500;}
+  .btn-fill{background:var(--green);color:var(--paper);}
+  .btn-fill:hover{background:var(--green-deep);}
+  .btn-line{border:1px solid var(--ink);color:var(--ink);margin-left:12px;}
+  .btn-line:hover{background:var(--ink);color:var(--paper);}
+
+  .stat-strip{border-top:1px solid var(--hairline);}
+  .stat-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .stat-strip .cell{padding:26px 0;border-right:1px solid var(--hairline);padding-right:20px;}
+  .stat-strip .cell:last-child{border-right:none;}
+  .stat-strip .num{font-family:'Source Serif 4',serif;font-size:26px;font-weight:600;display:block;margin-bottom:4px;}
+  .stat-strip .lbl{font-size:12.5px;color:var(--stone);}
+
+  section{padding:80px 0;}
+  .head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:46px;flex-wrap:wrap;}
+  .head-row h2{font-size:clamp(25px,2.8vw,32px);margin:0;}
+  .head-row .desc{max-width:400px;font-size:14.5px;color:var(--stone);margin:0;}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;}
+  .about-grid p{font-size:16px;margin:0 0 18px;color:#33342A;}
+  .pillar-list{display:flex;flex-direction:column;}
+  .pillar{padding:20px 0;border-top:1px solid var(--hairline);display:grid;grid-template-columns:90px 1fr;gap:18px;}
+  .pillar:last-child{border-bottom:1px solid var(--hairline);}
+  .pillar .k{font-size:12px;color:var(--brass);}
+  .pillar h3{font-size:16px;margin:0 0 6px;font-family:'Inter',sans-serif;font-weight:600;}
+  .pillar p{font-size:14px;color:var(--stone);margin:0;}
+
+  /* ---------- Practice areas ---------- */
+  .practice-table{border-top:1px solid var(--hairline);}
+  .p-row{display:grid;grid-template-columns:280px 1fr;gap:32px;padding:24px 0;border-bottom:1px solid var(--hairline);}
+  .p-row h3{font-size:18px;margin:0;font-weight:600;}
+  .p-row p{font-size:14.5px;color:var(--stone);margin:0;max-width:560px;}
+
+  /* ---------- Team ---------- */
+  .team-list{border-top:1px solid var(--hairline);}
+  .t-row{display:grid;grid-template-columns:220px 1fr;gap:40px;padding:36px 0;border-bottom:1px solid var(--hairline);}
+  .t-row .role{font-size:12.5px;color:var(--brass);margin-bottom:8px;}
+  .t-row h3{font-size:23px;margin:0;}
+  .t-row ul{margin:14px 0 0;padding-left:18px;font-size:14.5px;color:#33342A;}
+  .t-row li{margin-bottom:6px;}
+
+  /* ---------- Insights ---------- */
+  .insight-row{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hairline);}
+  .insight{padding:26px 26px 0 0;border-right:1px solid var(--hairline);}
+  .insight:last-child{border-right:none;padding-right:0;}
+  .insight .tag{font-size:12px;color:var(--brass);display:block;margin-bottom:10px;}
+  .insight h3{font-size:16.5px;font-weight:600;margin:0 0 8px;line-height:1.4;}
+  .insight p{font-size:13.5px;color:var(--stone);margin:0;}
+
+  /* ---------- Contact band (flat deep green, no gradient) ---------- */
+  .band{background:var(--green-deep);color:var(--paper);}
+  .band .head-row .desc{color:#A9B3A3;}
+  .contact-grid{display:grid;grid-template-columns:1fr 0.9fr;gap:70px;}
+  .field{margin-bottom:20px;}
+  .field label{display:block;font-size:12.5px;color:#9FA893;margin-bottom:7px;}
+  .field input,.field textarea{
+    width:100%;background:transparent;border:none;border-bottom:1px solid var(--hairline-on-dark);
+    color:var(--paper);font-family:'Inter',sans-serif;font-size:15px;padding:9px 0;
+  }
+  .field input::placeholder,.field textarea::placeholder{color:rgba(241,236,223,0.35);}
+  .field input:focus,.field textarea:focus{outline:none;border-bottom-color:var(--brass);}
+  .band .btn-fill{background:var(--brass);color:var(--green-deep);}
+  .band .btn-fill:hover{background:#C08B3A;}
+  .contact-info .row{padding:18px 0;border-top:1px solid var(--hairline-on-dark);}
+  .contact-info .row:last-of-type{border-bottom:1px solid var(--hairline-on-dark);}
+  .contact-info .row span{display:block;font-size:12px;color:#9FA893;margin-bottom:5px;}
+  .flag{margin-top:22px;font-size:12.5px;color:#C7B98A;line-height:1.6;}
+
+  footer{padding:34px 0;border-top:1px solid var(--hairline);}
+  .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--stone);}
+
+  @media (max-width:840px){
+    .navlinks{display:none;}
+    .menu-btn{display:inline-block;}
+    .hero-inner{grid-template-columns:1fr;gap:30px;}
+    .hero-side{border-left:none;border-top:1px solid var(--hairline);padding-left:0;padding-top:24px;}
+    .stat-strip .wrap{grid-template-columns:1fr 1fr;}
+    .stat-strip .cell:nth-child(2){border-right:none;}
+    .about-grid{grid-template-columns:1fr;gap:36px;}
+    .p-row,.t-row{grid-template-columns:1fr;gap:10px;}
+    .insight-row{grid-template-columns:1fr;}
+    .insight{border-right:none;padding-right:0;padding-bottom:26px;border-bottom:1px solid var(--hairline);}
+    .contact-grid{grid-template-columns:1fr;gap:40px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <div class="seal">AO</div>
+      <div class="brand-text">
+        <div class="name">Aguko Osman & Co.</div>
+        <div class="sub">Advocates, Nairobi</div>
+      </div>
+    </a>
+    <nav class="navlinks">
+      <a href="#about">Firm</a>
+      <a href="#practice">Practice Areas</a>
+      <a href="#team">Advocates</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-btn">Menu</button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="kicker">Advocates of the High Court of Kenya</div>
+      <h1>Counsel for dispute resolution, corporate practice, and property law in Kenya.</h1>
+      <p class="lede">Aguko Osman & Co. Advocates advises individuals, businesses, and institutions from chambers in Nairobi, with associate firms supporting matters across East Africa.</p>
+    </div>
+    <div class="hero-side">
+      <p>Matters are handled directly by the partners, from first instructions through to resolution.</p>
+      <a class="btn btn-fill" href="#contact">Book a consultation</a>
+      <a class="btn btn-line" href="#practice">Practice areas</a>
+    </div>
+  </div>
+  <div class="stat-strip">
+    <div class="wrap">
+      <div class="cell"><span class="num">2</span><span class="lbl">Partners, Advocates of the High Court</span></div>
+      <div class="cell"><span class="num">12</span><span class="lbl">Practice areas</span></div>
+      <div class="cell"><span class="num">EA</span><span class="lbl">Regional reach via associate firms</span></div>
+      <div class="cell"><span class="num">Nairobi</span><span class="lbl">Chambers location</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="hairline">
+  <div class="wrap about-grid">
+    <div>
+      <h2 style="margin-top:0;">A firm structured around direct access</h2>
+      <p>The firm was founded to provide dispute resolution, corporate and commercial, and conveyancing advice that stays close to the client throughout a matter. The partners work directly with clients rather than routing matters through layers of staff, and maintain associate relationships with firms elsewhere in East Africa for cross-border work.</p>
+      <p>Legal analysis is paired with commercial judgment — weighing regulatory, financial, and reputational considerations alongside the strict legal risk in a transaction or dispute.</p>
+    </div>
+    <div class="pillar-list">
+      <div class="pillar"><div class="k">01</div><div><h3>Direct partner involvement</h3><p>Both partners are personally engaged on client matters.</p></div></div>
+      <div class="pillar"><div class="k">02</div><div><h3>Regional network</h3><p>Associate firms across East Africa support cross-border matters.</p></div></div>
+      <div class="pillar"><div class="k">03</div><div><h3>Multidisciplinary approach</h3><p>Legal advice paired with commercial and regulatory analysis.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="practice" class="hairline">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>Practice areas</h2>
+      <p class="desc">Advisory and litigation support across the firm's core areas of practice.</p>
+    </div>
+    <div class="practice-table">
+      <div class="p-row"><h3>Dispute Resolution & Litigation</h3><p>Negotiation, mediation, arbitration, and litigation across employment, commercial, land, and fraud-related disputes.</p></div>
+      <div class="p-row"><h3>Corporate & Commercial Law</h3><p>Company registration, corporate governance, agreements, mergers and acquisitions, transaction advisory.</p></div>
+      <div class="p-row"><h3>Real Estate & Conveyancing</h3><p>Residential and commercial property transactions, due diligence, and land dispute representation before the Environment and Land Court.</p></div>
+      <div class="p-row"><h3>Banking, Finance & Capital Markets</h3><p>Advisory on financing structures, capital markets matters, and related regulatory compliance.</p></div>
+      <div class="p-row"><h3>Employment & Labour</h3><p>Advisory and representation on workplace disputes and employment-related litigation.</p></div>
+      <div class="p-row"><h3>Family Law</h3><p>Advisory across family and domestic relations matters.</p></div>
+      <div class="p-row"><h3>Tax Advisory</h3><p>Tax transaction support, compliance structuring, and risk mitigation.</p></div>
+      <div class="p-row"><h3>Debt Collection & Recovery</h3><p>Recovery process from initial debtor contact through litigation and enforcement.</p></div>
+      <div class="p-row"><h3>Intellectual Property</h3><p>Advisory on IP protection and litigation support where rights are contested.</p></div>
+      <div class="p-row"><h3>Government, Policy & Legislative Drafting</h3><p>Legislative drafting and policy advisory, including public procurement and revenue frameworks.</p></div>
+      <div class="p-row"><h3>Telecoms, Mining, Energy & Resources</h3><p>Sector-specific regulatory and transactional advisory.</p></div>
+      <div class="p-row"><h3>Forensic & Litigation Consulting</h3><p>Damages quantification, forensic accounting, and electronic evidence support for disputes and investigations.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="hairline">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>The advocates</h2>
+      <p class="desc">Direct access to the partners on every matter.</p>
+    </div>
+    <div class="team-list">
+      <div class="t-row">
+        <div><div class="role">Senior Partner</div><h3>Gad Aguko</h3></div>
+        <ul>
+          <li>LL.B, University of Nairobi</li>
+          <li>Postgraduate Diploma in Law, Kenya School of Law</li>
+          <li>Advocate of the High Court of Kenya</li>
+          <li>Currently pursuing the Certified Public Secretary course (KASNEB)</li>
+          <li>Named in The Lawyer Africa's Top Real Estate & Finance Lawyers and Top Litigation Lawyers listings</li>
+        </ul>
+      </div>
+      <div class="t-row">
+        <div><div class="role">Managing Partner</div><h3>Abdikadir Osman Mohamed</h3></div>
+        <ul>
+          <li>LL.B, University of Nairobi</li>
+          <li>Advocate of the High Court of Kenya</li>
+          <li>Certified Public Mediator, Mediation Training Institute (MTI-K)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="insights" class="hairline">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>Insights</h2>
+      <p class="desc">Commentary on legal and regulatory developments affecting clients in Kenya.</p>
+    </div>
+    <div class="insight-row">
+      <div class="insight"><span class="tag">Real Estate</span><h3>Due diligence steps before a conveyancing transaction in Kenya</h3><p>What buyers and sellers should confirm before transfer.</p></div>
+      <div class="insight"><span class="tag">Employment</span><h3>Handling redundancy under the Employment Act</h3><p>Notice, consultation, and severance obligations for employers.</p></div>
+      <div class="insight"><span class="tag">Dispute Resolution</span><h3>When to choose arbitration over litigation</h3><p>Cost, timeline, and confidentiality trade-offs for commercial disputes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>Speak with the firm</h2>
+      <p class="desc">Send a brief outline of your matter and an advocate will respond directly.</p>
+    </div>
+    <div class="contact-grid">
+      <form onsubmit="event.preventDefault();">
+        <div class="field"><label for="name">Full name</label><input id="name" type="text" placeholder="Your name"></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com"></div>
+        <div class="field"><label for="matter">Nature of matter</label><input id="matter" type="text" placeholder="e.g. Conveyancing, dispute, corporate advisory"></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" rows="4" placeholder="Brief description of your matter"></textarea></div>
+        <button class="btn btn-fill" type="submit" style="margin-top:6px;">Send inquiry</button>
+      </form>
+      <div class="contact-info">
+        <div class="row"><span>Office</span>Nairobi CBD, Kenya — chambers address to be confirmed</div>
+        <div class="row"><span>Phone / WhatsApp</span>+254 743 923 365</div>
+        <div class="row"><span>Email</span>info@agukoosman.com</div>
+        <div class="row"><span>Hours</span>Monday – Friday, 8:00am – 5:00pm</div>
+        <p class="flag">Note: public listings show two different office addresses (Pioneer House, Moi Avenue vs. Akai Plaza, Thika Road, both "5th Floor, Room 501"). Confirm the current address before this goes live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>© <span id="year"></span> Aguko Osman & Co. Advocates. All rights reserved.</div>
+    <div>Advocates of the High Court of Kenya · Nairobi</div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
