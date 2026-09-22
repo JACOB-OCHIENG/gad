@@ -131,6 +131,19 @@
     var skip = document.querySelector(".skip");
     if (skip) skip.textContent = d.skip;
 
+    var dock = document.getElementById("site-dock");
+    if (!dock) {
+      dock = document.createElement("nav");
+      dock.id = "site-dock";
+      dock.className = "dock";
+      document.body.appendChild(dock);
+    }
+    dock.setAttribute("aria-label", d.contact.title);
+    dock.innerHTML =
+      '<a href="tel:+254743923365">' + d.home.call + "</a>" +
+      '<a href="https://wa.me/254743923365" target="_blank" rel="noopener">WhatsApp</a>' +
+      '<a href="' + root + 'contact.html">' + d.home.write + "</a>";
+
     bindMenu();
     bindLang();
   }
@@ -225,6 +238,18 @@
         "</span></a>"
       );
     }).join("");
+  }
+
+  function fillTicker() {
+    var mount = document.getElementById("ticker");
+    if (!mount) return;
+    var d = dict();
+    var names = AREA_ORDER.map(function (id) {
+      return "<span>" + d.areas[id].title + "</span>";
+    }).join("");
+    mount.innerHTML =
+      '<div class="ticker-track" aria-hidden="true">' + names + names + "</div>";
+    mount.setAttribute("aria-label", d.home.ticker);
   }
 
   function fillHomeAreas() {
@@ -391,6 +416,7 @@
     renderChrome();
     setTitle();
     applyStatic();
+    fillTicker();
     fillHomeAreas();
     fillPracticeIndex();
     fillInsightsIndex();

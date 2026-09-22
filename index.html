@@ -16,26 +16,32 @@
 <body data-page="home">
   <a class="skip" href="#main">Skip to content</a>
   <div id="site-header"></div>
-  <main id="main" class="page">
-    <div class="wrap split">
+  <main id="main" class="page front">
+    <div class="wrap front-grid">
       <div>
         <p class="page-kicker" data-i18n="home.kicker"></p>
-        <h1 class="lede" data-i18n="home.lede"></h1>
+        <h1 class="lede front-title" data-i18n="home.lede"></h1>
         <p class="intro" data-i18n="home.intro"></p>
         <div class="actions">
           <a class="btn btn-solid" href="contact.html" data-i18n="home.ctaWrite"></a>
           <a class="btn btn-ghost" href="practice.html" data-i18n="home.ctaPractice"></a>
         </div>
+        <p class="front-facts">
+          <a href="tel:+254743923365">+254 743 923 365</a>
+          <a href="mailto:info@agukoosman.com">info@agukoosman.com</a>
+          <span>Nairobi</span>
+        </p>
       </div>
-      <aside class="margin-note">
-        <strong data-i18n="home.instructTitle"></strong>
-        <span data-i18n="home.instruct"></span>
-        <div class="actions">
-          <a class="btn btn-ghost" href="mailto:info@agukoosman.com">info@agukoosman.com</a>
-        </div>
-      </aside>
+      <nav class="doors" aria-label="Sections">
+        <a href="about.html"><span>01</span><strong data-i18n="home.doorFirm"></strong><em data-i18n="home.doorFirmB"></em></a>
+        <a href="practice.html"><span>02</span><strong data-i18n="home.doorPractice"></strong><em data-i18n="home.doorPracticeB"></em></a>
+        <a href="advocates.html"><span>03</span><strong data-i18n="home.doorPeople"></strong><em data-i18n="home.doorPeopleB"></em></a>
+        <a href="insights.html"><span>04</span><strong data-i18n="home.doorInsights"></strong><em data-i18n="home.doorInsightsB"></em></a>
+        <a href="profile.html"><span>05</span><strong data-i18n="home.doorProfile"></strong><em data-i18n="home.doorProfileB"></em></a>
+        <a href="contact.html"><span>06</span><strong data-i18n="home.doorContact"></strong><em data-i18n="home.doorContactB"></em></a>
+      </nav>
     </div>
-    <hr class="rule">
+    <div class="ticker" id="ticker"></div>
     <div class="wrap">
       <p class="page-kicker" data-i18n="home.selected"></p>
       <div class="index-list" id="home-areas"></div>
