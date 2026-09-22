@@ -14,11 +14,6 @@
 
 html { scroll-behavior: smooth; }
 
-body:not(.ao-ready) main,
-body:not(.ao-ready) .band,
-body:not(.ao-ready) .colophon,
-body:not(.ao-ready) #site-header { visibility: hidden; }
-
 body {
   margin: 0;
   color: var(--ink);
